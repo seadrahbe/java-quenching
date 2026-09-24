@@ -22,7 +22,7 @@ public class Practice {
                 sum += num;
             }
         }
-        
+
         return sum;
     }
 
@@ -38,7 +38,21 @@ public class Practice {
      * @throws NullPointerException if words is null
      */
     public static String shortestWord(Set<String> words) {
-        return null;
+
+        String shortest = null;
+
+        for (String word : words) {
+            if (shortest == null) {
+                shortest = word;
+            } else if (word.length() < shortest.length()){
+                shortest = word;
+            } else if (word.length() == shortest.length()) {
+                if (shortest.compareTo(word) > 0) {
+                    shortest = word;
+                }
+            }
+        }
+        return shortest;
     }
 
     /**
