@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.HashSet;
 
 public class Practice {
     /**
@@ -73,7 +74,20 @@ public class Practice {
      * @throws NullPointerException if ages is null
      */
     public static Set<String> adults(Map<String, Integer> ages) {
-        return null;
+
+        if (ages == null) {
+            throw new NullPointerException("Ages cannot be null.");
+        }
+
+        Set<String> adults = new HashSet<>();
+
+        for (String name : ages.keySet()) {
+            if (ages.get(name) > 17) {
+                adults.add(name);
+            }
+        }
+
+        return adults;
     }
 
     /**
