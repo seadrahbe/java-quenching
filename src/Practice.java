@@ -161,9 +161,8 @@ public class Practice {
 
         if (root == null) return 0;
 
-        int depth = Math.max(levelCount(root.left), levelCount(root.right));
+        return Math.max(levelCount(root.left), levelCount(root.right)) + 1;
 
-        return depth + 1;
     }
 
 
